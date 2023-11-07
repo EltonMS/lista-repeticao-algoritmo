@@ -13,10 +13,11 @@ public class IntervaloCemDuzentos {
         Scanner scanner = new Scanner(System.in);
         int i;
         int numeros_entre_cem_duzentos = 0;
+        int numero_digitado = 1;
   //Preciso mudar o tipo de laço para ler quantos numeros quiser posteriormente(while), e parar apenas com o 0 digitado.
-        for (i = 1; i < 5; i++) {
+        while (true) {
             System.out.println("Digite um Numero: ");
-            int numero_digitado = scanner.nextInt();
+            numero_digitado = scanner.nextInt();
             if (numero_digitado >= 100 && numero_digitado <= 200) {
                 numeros_entre_cem_duzentos++;
             }
