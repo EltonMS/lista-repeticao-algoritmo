@@ -26,6 +26,10 @@ public class PedidosDeCompras {
 
         pedidos.add(pedido_danilo);
 
+        System.out.println(pedido_danilo.CalcularValorPedido());
+        System.out.println("O valor de black-friday é :" + pedido_danilo.CalcularValorPedidoBlackFriday());
+
+        //Novo pedido
         Pedido pedido_elton = new Pedido(2);
 
         Produto sapato = new Produto(7, 50.0, 3);
@@ -34,10 +38,14 @@ public class PedidosDeCompras {
         pedido_elton.produtos.add(sapato);
         pedido_elton.produtos.add(meia);
 
-        System.out.println(pedido_danilo.CalcularValorPedido());
+        Date date = new Date(2014, 12, 25);
+
+        Cliente cliente_elton = new Cliente("Elton", 0125245345, date);
+
+        pedido_elton.setCliente(cliente_elton);
+
         System.out.println(pedido_elton.CalcularValorPedido());
 
-        System.out.println("O valor de black-friday é :" + pedido_danilo.CalcularValorPedidoBlackFriday());
         System.out.println("O valor de black-friday é :" + pedido_elton.CalcularValorPedidoBlackFriday());
     }
 
@@ -121,7 +129,6 @@ public class PedidosDeCompras {
         private int numero;
         private ArrayList<Produto> produtos;
         private double valor_total = 0;
-        //preciso entender melhor essa criação
         private Cliente cliente;
 
         public Pedido(int numero) {
@@ -154,9 +161,19 @@ public class PedidosDeCompras {
         // Aplicar um desconto de até R$ 150 no valor total da compra para clientes com até 5 anos de cadastro no sistema
         public double CalcularValorPedidoDescontoClientesMaisde5Anos() {
 
-            double valor_fidelidade = valor_total - 150;
+            double valor_pedido = CalcularValorPedido();
+            //
+            int ano_cadastro = cliente.data_de_emissao.getYear();
 
-            return 0;
+            Date now = new Date();
+
+            int idade = now.getYear() - ano_cadastro;
+
+            if (idade >= 5) {
+                return valor_pedido - 150;
+            }
+
+            return valor_pedido;
         }
     }
 }
