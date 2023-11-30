@@ -15,14 +15,15 @@ public class TabuadaMultiplicacao {
         int primeiro_fator = 1;
         int segundo_fator;
         int produto;
-        
+        System.out.println("Digite um valor: ");    
+        numero_digitado = scanner.nextInt();
         for(segundo_fator = 1; segundo_fator <= 10; segundo_fator++){
-            System.out.println("Digite um valor: ");    
-            numero_digitado = scanner.nextInt();
+
             primeiro_fator = numero_digitado;
             
             produto = primeiro_fator * segundo_fator;
             
+            System.out.println(primeiro_fator +" x "+ segundo_fator);
             
             System.out.println(produto);
         
