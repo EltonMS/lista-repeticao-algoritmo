@@ -18,7 +18,7 @@ public class MediaTurma {
         Double media_anterior = 0.0;
         for(int alunos = 1; alunos <= 5; alunos++){
             System.out.println("Digite seu nome: ");
-            nome_aluno = scanner.nextLine();
+            nome_aluno = scanner.next();
             System.out.println("Digite a primeira nota: ");
             primeira_nota = scanner.nextDouble();
             System.out.println("Digite a segunda nota: ");
