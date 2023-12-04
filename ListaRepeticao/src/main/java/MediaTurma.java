@@ -1,3 +1,4 @@
+
 /**
  *
  * @author Elton
@@ -8,6 +9,7 @@
 import java.util.Scanner;
 
 public class MediaTurma {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String nome_aluno;
@@ -16,21 +18,19 @@ public class MediaTurma {
         Double primeira_nota;
         Double segunda_nota;
         Double media_anterior = 0.0;
-        for(int alunos = 1; alunos <= 5; alunos++){
+        for (int alunos = 1; alunos <= 5; alunos++) {
             System.out.println("Digite seu nome: ");
             nome_aluno = scanner.next();
             System.out.println("Digite a primeira nota: ");
             primeira_nota = scanner.nextDouble();
             System.out.println("Digite a segunda nota: ");
             segunda_nota = scanner.nextDouble();
-            media_aluno = (primeira_nota + segunda_nota)/2;
-            System.out.println("A média do aluno " +nome_aluno+ " é:" + media_aluno );
-            
-            media_anterior = media_aluno + media_anterior;    
+            media_aluno = (primeira_nota + segunda_nota) / 2;
+            System.out.println("A média do aluno " + nome_aluno + " é:" + media_aluno);
+
+            media_anterior = media_aluno + media_anterior;
             media_aluno = media_anterior;
-            
-            
-            
+
         }
         media_turma = media_aluno / 5;
         System.out.println("A média da turma é: " + media_turma);
